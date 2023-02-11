@@ -63,8 +63,8 @@ class Solution:
         for i in range(1,n+1):
             dp[i][0]=i
         
-        for i in range(n+1):
-            for j in range(m+1):
+        for i in range(1,n+1):
+            for j in range(1,m+1):      # 1 se issliye bcoz j=0 ka hamne upar hi calculations kar lee hai
                 if word1[i-1]==word2[j-1]:
                     dp[i][j]=0+dp[i-1][j-1]
                     
