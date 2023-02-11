@@ -76,7 +76,32 @@ class Solution:
                     ans=min(delete,insert,replace)
                     dp[i][j]=ans
 
-        return dp[n][m]
+        # return dp[n][m]
+
+        #=============  SPACE OPTIMIZATION ===========
+        curr=[0 for i in range(m+2)]
+        prev=[0 for i in range(m+2)]
+
+        for j in range(0,m+1):
+            prev[j]=j
+        
+        for i in range(1,n+1):
+            curr[0]=i
+            for j in range(1,m+1):
+                if word1[i-1]==word2[j-1]:
+                    curr[j]=0+prev[j-1]
+                else: 
+                    insert=1+curr[j-1]
+                    delete=1+prev[j]
+                    replace=1+prev[j-1]
+
+                    ans=min(delete,insert,replace)
+                    curr[j]=ans
+            prev=curr 
+
+        print(prev)
+        return prev[m]               
+
 
 
 obj=Solution()
