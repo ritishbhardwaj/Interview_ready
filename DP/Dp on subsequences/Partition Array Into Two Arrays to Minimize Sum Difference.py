@@ -19,7 +19,7 @@ class Solution:
         
         n=len(nums)
         target = 13
-        if n%2!=0: return False
+        if n%2!=0: return False 
         l=n//2
         print(l)
         ans=sol(n-1,target,l,nums)
