@@ -49,8 +49,8 @@ class Solution:
             if i==0 and j>=1:
                 return False
             if j==0 and i>=1:
-                for ii in range(i):
-                    if s1[ii] != '*':
+                for ii in range(1,i):
+                    if s1[ii-1] != '*':
                         return False
                 return True
 
