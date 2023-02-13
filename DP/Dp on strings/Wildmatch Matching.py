@@ -41,7 +41,7 @@ class Solution:
         # print(ans)
         # return ans
         
-        #====== 1 based indexing ===========
+        #========= 1 based indexing ===========
         def sol(s1,s2,i,j,dp):       #s1 shows pattern      s2 shows input string
             #BASE CASE            
             if i==0 and j==0:
@@ -77,11 +77,20 @@ class Solution:
                 return False
 
 
-        dp=[[-1 for i in range(m+1)] for j in range(n+1) ]
-        ans=sol(p,s,n,m,dp)
-        print(ans)
-        return ans
+        # dp=[[-1 for i in range(m+1)] for j in range(n+1) ]
+        # ans=sol(p,s,n,m,dp)
+        # print(ans)
+        # return ans
 
+        #============ TABULATION =============
+        s1=p[:]
+        s2=s[:]
+        dp=[[False for i in range(m+1)] for j in range(n+1) ]
+
+        dp[0][0]=True
+
+        for j in range(1,m+1):
+            dp[0][j]=False
 
 obj=Solution()
 obj.isMatch(s = "aa", p = "a")
