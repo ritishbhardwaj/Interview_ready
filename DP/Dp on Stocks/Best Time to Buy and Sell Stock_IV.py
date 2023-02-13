@@ -1,7 +1,8 @@
 from typing import *
+
 class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
-        
+    def maxProfit(self, k: int, prices: List[int]) -> int:
+
         n=len(prices)
 
         #====MEMOIZATION ======
@@ -55,47 +56,9 @@ class Solution:
 
                     # return profit
         print(dp[0][1][2])
-        # return (dp[0][1][2])
-
-        #=========== SPACE OPTIMIZATION=======
-        after=[[0 for i in range(3)] for j in range(2)]
-        curr=[[0 for i in range(3)] for j in range(2)]
-        for ind in range(n-1,-1,-1):
-            for buy in range(2):    # in tabulation the buy would be 0|1 bcoz in recursion it was 1->0
-                for cap in range(1,3):
-                    if buy :
-                        profit=max(-prices[ind]+after[0][cap],
-                                    0+after[1][cap])
-                    else:
-                        profit=max(prices[ind]+after[1][cap-1],
-                                    0+after[0][cap])
-
-                    curr[buy][cap]=profit
-            after=curr
-                    # return profit
-        print(curr[1][2])
-        print('break')
-        return (curr[1][2])
+        return (dp[0][1][2])
 
 
 obj=Solution()
-obj.maxProfit(prices = [3,3,5,0,0,3,1,4])
-obj.maxProfit(prices = [1,2,3,4,5])
-obj.maxProfit(prices = [7,6,4,3,1])
-
-
-
-'''
-LEETCODE SOLUTION FORUMS
-
-class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
-        t1_start,t2_start=float('inf'),float('inf')
-        t1_profit,t2_profit=0,0
-        for i in prices:
-            t1_start=min(t1_start,i)
-            t1_profit=max(t1_profit,i-t1_start)
-            t2_start=min(t2_start,i-t1_profit)
-            t2_profit=max(t2_profit,i-t2_start)
-        return t2_profit
-'''
+obj.maxProfit(k = 2, prices = [2,4,1])
+obj.maxProfit(k = 2, prices = [3,2,6,5,0,3])
