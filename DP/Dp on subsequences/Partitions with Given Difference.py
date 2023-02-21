@@ -27,7 +27,7 @@ class Solution:
             for target in range(k+1):
                 not_taken=prev[target]
                 taken =0
-                if arr[ind]<=target:
+                if arr[ind]<=target: 
                     taken=prev[target-arr[ind]] 
                 curr[target]=taken +not_taken
             prev=curr[:]    
