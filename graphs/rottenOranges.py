@@ -6,7 +6,7 @@ class Solution:
         n=len(grid)   # n represents row
         m=len(grid[0])  # m represents col
 
-        vis=[[0]*m for i in range(n)]
+        vis=[[0 for j in range(m)] for i in range(n)]
         q=deque([])
         cnt_Fresh=0
         for i in range(n):
@@ -38,7 +38,7 @@ class Solution:
 
                 if (nrow>=0 and nrow<n and ncol>=0 and ncol<m and vis[nrow][ncol]==0 and grid[nrow][ncol]==1):
                     q.append(((nrow,ncol),t+1))
-                    vis[nrow][ncol]==2
+                    vis[nrow][ncol]=2
                     cnt+=1
         if cnt!=cnt_Fresh:
             return -1
