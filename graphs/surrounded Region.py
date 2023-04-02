@@ -20,7 +20,7 @@ class Solution:
         delrow=[-1,0,1,0]
         delcol=[0,1,0,-1]
 
-
+        # EITHER USE THIS TO TRAVERSE OVER THE BOUNDARIES
         for j in range(m):
             if vis[0][j]==0 and board[0][j]=="O":
                 dfs(board,0,j,delrow,delcol)
@@ -31,7 +31,13 @@ class Solution:
                 dfs(board,0,j,delrow,delcol)
             if vis[i][m-1]==0 and board[i][m-1]=="O":
                 dfs(board,0,j,delrow,delcol)
-       
+        #or
+        # USE THIS ONE TO TRAVERSE OVER THE BOUNDARIES(MINE ONE)
+        for i in range(n):
+            for j in range(m):
+                if ((i==0) or (i==n-1) or (j==0) or (j==m-1)) and vis[i][j]==0 and board[i][j]=='O':
+                    dfs(board,i,j,delrow,delcol) 
+                    
 
         print(vis)
         for r in range(n):
