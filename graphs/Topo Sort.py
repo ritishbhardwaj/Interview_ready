@@ -20,7 +20,8 @@ class Solution:
                 node=i
                 dfs(node,vis,adj,stack)
         
-        return stack[::-1]
+        return stack
     
 obj=Solution()
 print(obj.topoSort(4,[[],[0],[0],[0]]))
+print(obj.topoSort(6,[[],[3],[],[2],[1,0],[2,0]]))
