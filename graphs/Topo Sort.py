@@ -5,7 +5,7 @@ class Solution:
         
         vis=[0 for i in range(V)]
         
-        def dfs(node,vis,mat,st):
+        def dfs(node,vis,mat,st:list):
             vis[node]=1
             
             for n in mat[node]:
