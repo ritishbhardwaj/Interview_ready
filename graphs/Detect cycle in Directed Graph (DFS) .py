@@ -19,7 +19,9 @@ class Solution:
         for i in range(V):
             if vis[i]==0:
                 if dfs(i,adj,vis,pathvis)==True:
+                    print(pathvis)
                     return True
+        print(pathvis)
         return False
 
 
@@ -29,5 +31,9 @@ adjL=[[1],[2],[3],[3]]
 print(obj.isCyclic(V,adjL))
 
 V,E=3,2
-adjL=[[1],[2]]
+adjL=[[1],[2],[]]
+print(obj.isCyclic(V,adjL))
+
+V=10
+adjL=[[],[2],[3],[4,7],[5],[6],[],[5],[2,9],[10],[8]]
 print(obj.isCyclic(V,adjL))
