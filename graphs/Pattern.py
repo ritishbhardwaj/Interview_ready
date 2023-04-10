@@ -1,7 +1,7 @@
 def sol():
     pass
 
-n=5
+n=int(input())
 grid=[["" for i in range((n*2)-1)] for i in range(n)]
 # print(grid)
 num=1
@@ -29,4 +29,6 @@ for i in range(len(grid)):
         if j=="":
             break
         print(j,end=" ")
+print()
+
     

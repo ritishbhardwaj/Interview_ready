@@ -6,8 +6,9 @@ class Solution:
         q=[]
         print(n,m)
         delrow=[-1,0,1,0]
-        delcol=[0,-1,0,1]
-
+        delcol=[0,1,0,-1]
+        if grid[0][0]==1:
+            return -1
         q.append((0,0,0))
 
         distGrid=[[maxx for i in range(len(grid[0]))] for j in range(len(grid))]
@@ -23,17 +24,19 @@ class Solution:
                 for c in delcol:
                     nr=row+r
                     nc=col+c
-                    if nr>=0 and nr<len(grid) and nc>=0 and nc<len(grid[0]) and grid[nr][nc]==0:
-                        if distGrid[nr][nc]> dis+1:
-                            distGrid[nr][nc]=dis+1
+                    if nr>=0 and nr<len(grid) and nc>=0 and nc<len(grid[0]) and grid[nr][nc]==0 and dis+1<distGrid[nr][nc]:
+                        distGrid[nr][nc]=dis+1
                         if nr==len(grid) and nc==len(grid[0]):
-                            flag=False
-        return distGrid[n-1][m-1]+1
+                            return dis+1
+                        q.append((dis+1,nr,nc))
+                        
+        return distGrid[n-1][m-1]+1 if distGrid[n-1][m-1]!=maxx else -1
+
     
 
 
 obj=Solution()
 grid = [[0,1],[1,0]]
-# print(obj.shortestPathBinaryMatrix(grid))
+print(obj.shortestPathBinaryMatrix(grid))
 print(obj.shortestPathBinaryMatrix(grid = [[0,0,0],[1,1,0],[1,1,0]]))
 print(obj.shortestPathBinaryMatrix(grid = [[1,0,0],[1,1,0],[1,1,0]]))
