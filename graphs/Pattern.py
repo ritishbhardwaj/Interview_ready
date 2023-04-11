@@ -1,7 +1,7 @@
 def sol():
     pass
 
-n=int(input())
+n=5
 grid=[["" for i in range((n*2)-1)] for i in range(n)]
 # print(grid)
 num=1
