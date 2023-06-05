@@ -3,7 +3,7 @@ from datetime import time
 from sys import maxsize
 #=====================MEMOIZATION=================
 def sol(ind,energy,dp):
-    if ind==0: return 0
+    if ind<=0: return 0
 
     if dp[ind] != None: return dp[ind]
     l=sol(ind-1,energy,dp)+ abs(energy[ind]-energy[ind-1])
