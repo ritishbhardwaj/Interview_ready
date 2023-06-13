@@ -24,8 +24,8 @@ class Solution:
                 dp[i][j]=not_take
                 return not_take
 
-        # dp=[[-1 for i in range(m+1)] for j in range(n+1)]
-        # return sol(n-1,m-1,s,t,dp)
+        dp=[[-1 for i in range(m+1)] for j in range(n+1)]
+        return sol(n-1,m-1,s,t,dp)
         #============= Memo with 1 based indexing ===============
         def sol(i,j,s1,s2,dp):
             if j==0:

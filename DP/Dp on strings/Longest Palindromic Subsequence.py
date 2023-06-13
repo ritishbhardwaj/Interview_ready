@@ -58,4 +58,5 @@ class Solution:
 # print()
 obj4=Solution()
 obj4.longestPalindromeSubseq('bbbab')
+print()
 obj4.longestPalindromeSubseq('cbbd')

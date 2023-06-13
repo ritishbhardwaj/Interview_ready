@@ -22,6 +22,7 @@ class Solution:
         # print()
         maxi=-float('inf')
         for i in dp:
+            print(i)
             maxi=max(maxi,max(i))
         print(maxi)
         return maxi
