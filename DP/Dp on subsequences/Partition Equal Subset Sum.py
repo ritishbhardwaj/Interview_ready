@@ -27,8 +27,8 @@ class Solution:
         if s%2!=0: return False
         n=len(nums)
         target=s//2
-        # dp=[[-1 for i in range(target+1)] for j in range(n)]
-        # return sol(n-1,nums,target,dp)
+        dp=[[-1 for i in range(target+1)] for j in range(n)]
+        return sol(n-1,nums,target,dp)
 
         #======================= TABULATION ========================
         dp=[[0 for i in range(target+1)] for j in range(n)]
