@@ -14,7 +14,7 @@ class Solution:
                 
             l=0  # to calculate the length of subarray
             maxAns=-sys.maxsize
-            maxi=-sys.maxsize  # to calculatge the maximum element in that particular subarray
+            maxi=-sys.maxsize  # to calculate the maximum element in that particular subarray
 
             for j in range(ind,min(n,ind+k)):
                 l+=1

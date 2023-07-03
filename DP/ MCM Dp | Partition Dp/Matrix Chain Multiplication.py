@@ -1,28 +1,31 @@
 from os import *
-from sys import *
+from sys import maxsize as mx
 from collections import *
 from math import *
 
-def matrixMultiplication(arr, n):
-    dp=[[-1 for i in range(len(arr))] for j in range(len(arr))]
-    return sol(1,len(arr)-1,arr,n,dp)
-	
+
+
 def sol(i,j,arr,n,dp):
-
-    if i==j :
+    if i==j:
         return 0
-    
-    if dp[i][j]!=-1 : 
+    if dp[i][j]!=-1:
         return dp[i][j]
-    mini=maxsize*maxsize
-    for k in range(i,j):
+    minimum_score=mx*mx
+    for partition in range(i,j):
+        general_score=(arr[i-1]*arr[partition]*arr[j])+ sol(i,partition,arr,n,dp)+ sol(partition+1,j,arr,n,dp)
+        minimum_score=min(minimum_score,general_score)
+    dp[i][j]=minimum_score
+    return minimum_score
 
-        steps=(arr[i-1]*arr[k]*arr[j]) + sol(i,k,arr,n,dp)+sol(k+1,j,arr,n,dp)
-        mini=min(mini,steps)
-    dp[i][j]=mini
+    
+def matrixMultiplication(arr,n):
+    dp=[[-1 for i in range(n+1)] for j in range(n+1)]
+    return sol(1,n-1,arr,n,dp) 
+        
 
-    return mini
 
 
 ans=matrixMultiplication([4,5,3,2],4)
+print(ans)
+ans=matrixMultiplication([40, 20, 30, 10, 30],5)
 print(ans)

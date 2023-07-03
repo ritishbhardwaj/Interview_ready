@@ -24,9 +24,9 @@ class Solution:
             
             return mini
 
-        # dp=[[-1 for i in range(m+1)] for j in range(m+1)]
-        # ans=sol(1,len(cuts)-2,cuts,dp)
-        # return ans
+        dp=[[-1 for i in range(m+1)] for j in range(m+1)]
+        ans=sol(1,len(cuts)-2,cuts,dp)
+        return ans
 
         #=============== MEMOIZATION ==================
 

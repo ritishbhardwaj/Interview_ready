@@ -20,7 +20,7 @@ class Solution:
 
         dp=[[-1 for i in range(n+1)] for j in range(n)]
         ans=sol(0,-1,nums,dp)
-        print(ans)
+        # print(ans," ",dp)
         # return ans
 
         #===========TABULATION============
@@ -33,7 +33,8 @@ class Solution:
                     l=max(l,1+dp[ind+1][ind+1])
                 dp[ind][prev+1]=l
         print(dp[0][-1+1])
-        # return dp[0][-1+1]
+        for i in dp: print(i)
+        return dp[0][-1+1]
 
         #========== SPACE OPTIMIZATION =========
         next=[0 for i in range(n+2)]
@@ -50,11 +51,11 @@ class Solution:
         print(next[-1+1])
         print(next,curr)
         print()
-        return dp[0][-1+1]
+        return next[-1+1]
 
 
 obj=Solution()
-obj.lengthOfLIS(nums = [10,9,2,5,3,7,101,18])
-obj.lengthOfLIS(nums = [0,1,0,3,2,3])
-obj.lengthOfLIS(nums = [7,7,7,7,7,7,7])
+# obj.lengthOfLIS(nums = [10,9,2,5,3,7,101,18])
+# obj.lengthOfLIS(nums = [0,1,0,3,2,3])
+# obj.lengthOfLIS(nums = [7,7,7,7,7,7,7])
 obj.lengthOfLIS([5,4,11,1,16,8])

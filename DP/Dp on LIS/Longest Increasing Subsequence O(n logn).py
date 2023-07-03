@@ -11,9 +11,10 @@ class Solution:
                 temp.append(nums[i])
                 l+=1
             else:
-                ind=bisect.bisect_right(temp,nums[i])
+                # ind=bisect.bisect_right(temp,nums[i])
                 ind=bisect.bisect_left(temp,nums[i])
                 # print(ind)
+                print(ind,temp)
                 temp[ind]=nums[i]
         print(temp)
         print(l)

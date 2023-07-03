@@ -7,9 +7,9 @@ class Solution:
         temp=[]
         maxi=1
         lastIndex=0
-        hash=[0 for i in range(len(nums))]
+        hash=[int(i) for i in range(len(nums))]
         for ind in range(1,len(nums)):
-            hash[ind]=ind
+            # hash[ind]=ind
             for prev in range(0,ind):
                 a=nums[ind]
                 b=nums[prev]
@@ -29,6 +29,7 @@ class Solution:
             temp.append(nums[lastIndex])
         temp.reverse()
         print(temp)
+        return temp
 
 
 
