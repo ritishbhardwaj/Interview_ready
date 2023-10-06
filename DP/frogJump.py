@@ -7,10 +7,11 @@ def sol(ind,energy,dp):
 
     if dp[ind] != None: return dp[ind]
     l=sol(ind-1,energy,dp)+ abs(energy[ind]-energy[ind-1])
+    r=maxsize
     if ind>1:
         r=sol(ind-2,energy,dp)+ abs(energy[ind]-energy[ind-2])
-    else:
-        r=maxsize
+    # else:
+    #     r=maxsize
     # print(maxsize)
     res=min(l,r)
     dp[ind]=res

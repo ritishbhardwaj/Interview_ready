@@ -29,6 +29,8 @@ obj=Solution()
 V = 5
 E = 5
 adj = [[1], [0, 2, 4], [1, 3], [2 ,4], [1 ,3]]
+ans=obj.isCycle(V,adj)
+print(ans)
 adj = [[1], [0, 2], [1, 3], [2 ,4], [3]]
 ans=obj.isCycle(V,adj)
 print(ans)

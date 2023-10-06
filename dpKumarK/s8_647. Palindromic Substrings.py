@@ -3,6 +3,7 @@ from typing import *
 class Solution:
     def countSubstrings(self, s: str) -> int:
 
+        # BRUTE FORCE
         cnt=0
         for i in range(len(s)):
             for j in range(i+1,len(s)+1):
@@ -11,6 +12,9 @@ class Solution:
                     cnt+=1
         
         return cnt
+    
+        #Optimal    
+        
             
 obj=Solution()
 cases=["aaa","abc","aaabcc"]

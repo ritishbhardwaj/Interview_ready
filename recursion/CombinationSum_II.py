@@ -1,4 +1,4 @@
-def sol(ind,ds,target,arr,storage):
+def sol(ind,ds:list,target,arr,storage):
     
     if target==0 :
         if ds not in storage:
@@ -13,7 +13,7 @@ def sol(ind,ds,target,arr,storage):
         ds.append(arr[i])
         sol(i+1,ds,target-arr[i],arr,storage)
         ds.remove(arr[i])
-        # sol(i+1,ds,target,arr,storage)
+        sol(i+1,ds,target,arr,storage)
 
 candidates =  [10,1,2,7,6,1,5]
 target = 8

@@ -8,8 +8,8 @@ class TreeNode:
 
 @dataclass
 class Pair():
-    x:int          # x means rows where root points to intersection of 0 level and left of it are negative val and right of it will be positive val
-    y:int         # y means level
+    x:int         # x means level
+    y:int         # y means rows where root points to intersection of 0 level and left of it are negative val and right of it will be positive val
     node: TreeNode
 
 class Solution:
@@ -38,7 +38,7 @@ class Solution:
             else:
                 hashmap[pair.y].append((pair.x,pair.node.val))
         hashmap_keys=sorted(hashmap)
-        print(hashmap_keys)
+        print(hashmap_keys," KEYS")
         print(hashmap)
         #sorting values according to question
         for k in hashmap_keys:

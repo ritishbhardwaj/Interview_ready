@@ -3,10 +3,12 @@ def isSafe(row,col,board,n):
     duplicate_reference_row=row
     duplicate_reference_col=col
 
+    # To check <--------------   this direction
     while row>=0 and col>=0:
         if board[col][row]=='Q': return False
         row-=1
         col-=1
+    
     
     row=duplicate_reference_row
     col=duplicate_reference_col

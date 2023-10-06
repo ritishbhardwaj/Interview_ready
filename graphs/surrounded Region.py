@@ -53,3 +53,8 @@ board = [["X","X","X","X"],["X","O","O","X"],["X","X","O","X"],["X","O","X","X"]
 print(obj.solve(board))
 # board = [["X"]]
 # print(obj.solve(board))
+
+print()
+import math
+a=math.gcd(18)
+print(a)
